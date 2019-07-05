@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
    end
     
   end
-  emptyHash
+  emptyHash2
 end
 
 def apply_clearance(cart)
