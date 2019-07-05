@@ -36,7 +36,7 @@ def apply_coupons(cart, coupons)
       emptyHash2[oldkey][:count] = itemcount - eligible_item_counts
       #emptyHash2[oldkey][:count] = ineligible_item_count
    else
-     emptyHash2.delete(oldkey)
+    # emptyHash2.delete(oldkey)
    end
     
   end
