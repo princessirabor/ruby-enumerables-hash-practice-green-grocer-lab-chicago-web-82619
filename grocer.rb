@@ -41,6 +41,13 @@ end
 
 def apply_clearance(cart)
   # code here
+  emptyHash3 = cart
+  emptyHash3.each do |(key,value)|
+    if value[:clearance]
+      emptyHash3[key][:price] = (emptyHash3[key][:price] * 0.8).round(2)
+    end
+  end
+  emptyHash3
 end
 
 def checkout(cart, coupons)
