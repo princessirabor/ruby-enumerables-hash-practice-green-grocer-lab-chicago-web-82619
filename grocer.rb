@@ -52,7 +52,7 @@ def checkout(cart, coupons)
   # code 
   price = 0 
   consolidatedcart = consolidate_cart(cart)
-  appliedcoupon = apply_coupons (consolidate_cart,coupons)
+  appliedcoupon = apply_coupons(consolidatedcart,coupons)
   appliedclearnce = apply_clearance(appliedcoupon)
   appliedclearance.each do |(key,value)|
     price += appliedclearance[key][:price]
