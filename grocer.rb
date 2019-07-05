@@ -16,7 +16,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  emptyHash2 = consolidate_cart(cart)
+  emptyHash2 = cart
   coupons.length.times do |index|
     oldkey = coupons[index][:item]
     itemcount = emptyHash2[oldkey][:count]
