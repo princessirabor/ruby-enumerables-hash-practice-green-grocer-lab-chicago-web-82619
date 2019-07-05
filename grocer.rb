@@ -55,7 +55,7 @@ def checkout(cart, coupons)
   appliedcoupon = apply_coupons(consolidatedcart,coupons)
   appliedclearance = apply_clearance(appliedcoupon)
   appliedclearance.each do |(key,value)|
-    price += appliedclearance[key][:price]
+    price += appliedclearance[key][:price] * appliedclearance[key][:count]
   end
   if price>100
     price = (price *0.9).round(2)
