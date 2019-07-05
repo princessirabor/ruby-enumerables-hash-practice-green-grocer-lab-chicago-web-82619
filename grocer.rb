@@ -18,7 +18,7 @@ def apply_coupons(cart, coupons)
   # code here
   cart_hash = consolidate_cart(cart)
   coupons.length.times do |index|
-    oldkey = emptyHash[coupons[index]][:item]
+    oldkey = emptyHash[coupons[index][:item]]
     itemcount = emptyHash[oldkey][:count]
     cost_per_item = (coupons[index][:cost])/(coupons[index][:num])
     eligible_item_count = itemcount/coupons[index][:num]
