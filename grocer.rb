@@ -25,7 +25,7 @@ def apply_coupons(cart, coupons)
     ineligible_item_count = itemcount%coupons[index][:num]
     new_key = oldkey + " W/COUPON"
     if eligible_item_count >0 
-      emptyHash2[new_key]= {:price => cost_per_item, :clearance => emptyHash[oldkey][:clearance], :count =>eligible_item_count }
+      emptyHash2[new_key]= {:price => cost_per_item, :clearance => emptyHash2[oldkey][:clearance], :count =>eligible_item_count }
     end
     if ineligible_item_count > 0 
       emptyHash2[oldkey][:count] = ineligible_item_count
