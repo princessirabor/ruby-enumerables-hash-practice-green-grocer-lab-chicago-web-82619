@@ -20,6 +20,7 @@ def apply_coupons(cart, coupons)
   p cart
   coupons.length.times do |index|
     oldkey = coupons[index][:item]
+    if emptyHash2[oldkey]
     itemcount = emptyHash2[oldkey][:count]
     cost_per_item = (coupons[index][:cost])/(coupons[index][:num])
     eligible_item_count = itemcount/coupons[index][:num]
@@ -36,6 +37,7 @@ def apply_coupons(cart, coupons)
    end
     
   end
+end
   emptyHash2
 end
 
