@@ -16,21 +16,21 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  emptyHash = consolidate_cart(cart)
+  emptyHash2 = consolidate_cart(cart)
   coupons.length.times do |index|
     oldkey = coupons[index][:item]
-    itemcount = emptyHash[oldkey][:count]
+    itemcount = emptyHash2[oldkey][:count]
     cost_per_item = (coupons[index][:cost])/(coupons[index][:num])
     eligible_item_count = itemcount/coupons[index][:num]
     ineligible_item_count = itemcount%coupons[index][:num]
     new_key = oldkey + " W/COUPON"
     if eligible_item_count >0 
-      emptyHash[new_key]= {:price => cost_per_item, :clearance => emptyHash[oldkey][:clearance], :count =>eligible_item_count }
+      emptyHash2[new_key]= {:price => cost_per_item, :clearance => emptyHash[oldkey][:clearance], :count =>eligible_item_count }
     end
     if ineligible_item_count > 0 
-      emptyHash[oldkey][:count] = ineligible_item_count
+      emptyHash2[oldkey][:count] = ineligible_item_count
    else
-     delete emptyHash[oldkey]
+     delete emptyHash2[oldkey]
    end
     
   end
